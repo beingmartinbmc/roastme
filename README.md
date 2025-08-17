@@ -21,40 +21,40 @@ A CLI tool that humorously roasts your code files, commit messages, and diffs wi
 
 ```bash
 # Install globally
-npm install -g roastme
+npm install -g roastcode
 
 # Or use npx (recommended)
-npx roastme [file]
+npx roastcode [file]
 ```
 
 ### Basic Usage
 
 ```bash
 # Roast a specific file (uses static engine by default)
-npx roastme index.js
+npx roastcode index.js
 
 # Roast with different modes
-npx roastme index.js --mode gentle
-npx roastme index.js --mode savage
-npx roastme index.js --mode toxic
+npx roastcode index.js --mode gentle
+npx roastcode index.js --mode savage
+npx roastcode index.js --mode toxic
 
 # Use AI-powered roasting (OpenAI)
-npx roastme index.js --engine openai
+npx roastcode index.js --engine openai
 
 # Use local AI (Ollama)
-npx roastme index.js --engine ollama
+npx roastcode index.js --engine ollama
 
 # Roast your latest commit
-npx roastme --commit
+npx roastcode --commit
 
 # Roast staged changes
-npx roastme --staged
+npx roastcode --staged
 
 # Generate a meme based on your code
-npx roastme index.js --meme
+npx roastcode index.js --meme
 
 # List available engines
-npx roastme engines
+npx roastcode engines
 ```
 
 ## 🎭 Roast Modes
@@ -96,7 +96,7 @@ Unfiltered chaos (use responsibly):
    ```
 3. Use it:
    ```bash
-   npx roastme index.js --engine openai
+   npx roastcode index.js --engine openai
    ```
 
 ### Ollama Engine
@@ -112,7 +112,7 @@ Unfiltered chaos (use responsibly):
    ```
 3. Use it:
    ```bash
-   npx roastme index.js --engine ollama --model llama2
+   npx roastcode index.js --engine ollama --model llama2
    ```
 
 ## 🎭 Meme Generation
@@ -123,17 +123,17 @@ RoastMe can generate hilarious memes based on your code issues! Perfect for shar
 
 ```bash
 # Generate meme with static engine (default)
-npx roastme index.js --meme --mode savage
+npx roastcode index.js --meme --mode savage
 
 # Generate meme with AI-powered captions
-npx roastme index.js --engine openai --meme --mode savage
+npx roastcode index.js --engine openai --meme --mode savage
 
 # Generate meme with local AI
-npx roastme index.js --engine ollama --meme --mode savage
+npx roastcode index.js --engine ollama --meme --mode savage
 
 # Different modes for memes
-npx roastme index.js --meme --mode gentle
-npx roastme index.js --meme --mode toxic
+npx roastcode index.js --meme --mode gentle
+npx roastcode index.js --meme --mode toxic
 ```
 
 ### Available Meme Templates
@@ -155,7 +155,7 @@ RoastMe automatically selects the best meme template based on your code issues:
 
 ```bash
 # Static engine (default)
-$ npx roastme examples/bad-code.js
+$ npx roastcode examples/bad-code.js
 🔥 Roasting: examples/bad-code.js
 Mode: SAVAGE
 Engine: STATIC
@@ -168,7 +168,7 @@ Engine: STATIC
 🤖 RoastBot: This code is a masterpiece... of chaos.
 
 # AI-powered roasting
-$ npx roastme examples/bad-code.js --engine openai
+$ npx roastcode examples/bad-code.js --engine openai
 🔥 Roasting: examples/bad-code.js
 Mode: SAVAGE
 Engine: OPENAI
@@ -180,7 +180,7 @@ Engine: OPENAI
 ### Roasting Commits
 
 ```bash
-$ npx roastme --commit --engine openai
+$ npx roastcode --commit --engine openai
 🔥 Roasting Commit: a43d2856
 Mode: SAVAGE
 Engine: OPENAI
@@ -195,7 +195,7 @@ Engine: OPENAI
 
 ```bash
 # Static engine meme (pre-written captions)
-$ npx roastme examples/bad-code.js --meme --mode savage
+$ npx roastcode examples/bad-code.js --meme --mode savage
 🔥 Roasting: examples/bad-code.js
 Mode: SAVAGE
 Engine: STATIC
@@ -210,7 +210,7 @@ Engine: STATIC
    📁 Saved to: roast-meme-1234567890.png
 
 # OpenAI AI-powered meme (dynamic captions)
-$ npx roastme examples/terrible-code.js --engine openai --meme --mode toxic
+$ npx roastcode examples/terrible-code.js --engine openai --meme --mode toxic
 🔥 Roasting: examples/terrible-code.js
 Mode: TOXIC
 Engine: OPENAI
@@ -285,7 +285,7 @@ Add to your `.git/hooks/pre-commit`:
 
 ```bash
 #!/bin/sh
-npx roastme --staged --mode savage
+npx roastcode --staged --mode savage
 ```
 
 ### GitHub Actions
@@ -304,12 +304,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: npm install -g roastme
+      - run: npm install -g roastcode
       # Static engine (no API keys needed)
-      - run: roastme --staged --mode savage
+      - run: roastcode --staged --mode savage
       
       # Or with AI and memes (requires secrets)
-      # - run: roastme --staged --mode savage --engine openai --meme
+      # - run: roastcode --staged --mode savage --engine openai --meme
       #   env:
       #     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 ```
