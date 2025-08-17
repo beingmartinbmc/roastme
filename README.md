@@ -123,13 +123,17 @@ RoastMe can generate hilarious memes based on your code issues! Perfect for shar
 
 ```bash
 # Generate meme with static engine (default)
-npx roastme index.js --meme
+npx roastme index.js --meme --mode savage
 
 # Generate meme with AI-powered captions
-npx roastme index.js --engine openai --meme
+npx roastme index.js --engine openai --meme --mode savage
 
 # Generate meme with local AI
-npx roastme index.js --engine ollama --meme
+npx roastme index.js --engine ollama --meme --mode savage
+
+# Different modes for memes
+npx roastme index.js --meme --mode gentle
+npx roastme index.js --meme --mode toxic
 ```
 
 ### Available Meme Templates
@@ -321,7 +325,7 @@ jobs:
 --engine ollama          # Local Ollama AI roasts
 
 # Model selection (for AI engines)
---model gpt-4o-mini      # OpenAI model (default)
+--model gpt-4.1-nano      # OpenAI model (default)
 --model llama2           # Ollama model (default)
 
 # Mode selection
