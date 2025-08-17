@@ -1,4 +1,4 @@
-# 🔥 RoastMe
+# 🔥 RoastCode
 
 > Because your code deserves tough love.
 
@@ -117,7 +117,7 @@ Unfiltered chaos (use responsibly):
 
 ## 🎭 Meme Generation
 
-RoastMe can generate hilarious memes based on your code issues! Perfect for sharing on social media or team chats.
+RoastCode can generate hilarious memes based on your code issues! Perfect for sharing on social media or team chats.
 
 ### Basic Meme Generation
 
@@ -138,7 +138,7 @@ npx roastcode index.js --meme --mode toxic
 
 ### Available Meme Templates
 
-RoastMe automatically selects the best meme template based on your code issues:
+RoastCode automatically selects the best meme template based on your code issues:
 
 | Template | Description | Best For |
 |----------|-------------|----------|
@@ -351,7 +351,7 @@ jobs:
 ```bash
 # Clone and install
 git clone <repo>
-cd roastme
+cd roastcode
 npm install
 
 # Make executable
@@ -368,7 +368,7 @@ chmod +x bin/roastme.js
 ### Project Structure
 
 ```
-roastme/
+roastcode/
 ├── bin/
 │   └── roastme.js          # CLI entry point
 ├── lib/
