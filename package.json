@@ -1,0 +1,52 @@
+{
+  "name": "roastme",
+  "version": "1.0.0",
+  "description": "Because your code deserves tough love. A CLI tool that humorously roasts code files, commit messages, and diffs with multiple AI engines.",
+  "main": "index.js",
+  "bin": {
+    "roastme": "./bin/roastme.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/roastme.js",
+    "dev": "node bin/roastme.js"
+  },
+  "keywords": [
+    "cli",
+    "code-review",
+    "humor",
+    "roast",
+    "git",
+    "commit",
+    "code-quality",
+    "ai",
+    "ollama",
+    "openai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.1.1",
+    "simple-git": "^3.20.0",
+    "glob": "^10.3.10"
+  },
+  "optionalDependencies": {
+    "ollama": "^0.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/roastme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/roastme/issues"
+  },
+  "homepage": "https://github.com/yourusername/roastme#readme"
+}
