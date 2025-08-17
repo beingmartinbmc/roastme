@@ -1,0 +1,22 @@
+{
+  "mode": "savage",
+  "engine": "static",
+  "targets": ["code", "commit"],
+  "ci": false,
+  "ignorePatterns": [
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    ".git/**",
+    "*.min.js",
+    "*.bundle.js"
+  ],
+  "maxFileSize": 1000000,
+  "enabledChecks": [
+    "consoleLog",
+    "nestedIfs",
+    "longFunctions",
+    "magicNumbers",
+    "todoComments"
+  ]
+}
