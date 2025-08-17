@@ -1,59 +1,80 @@
 # 🔥 RoastCode
 
-> Because your code deserves tough love.
+> Because your code deserves tough love (and some laughs).
+
+[![npm version](https://badge.fury.io/js/roastcode.svg)](https://badge.fury.io/js/roastcode)
+[![npm downloads](https://img.shields.io/npm/dm/roastcode.svg)](https://www.npmjs.com/package/roastcode)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)](https://nodejs.org/)
 
 A CLI tool that humorously roasts your code files, commit messages, and diffs with AI-powered savagery. Perfect for code reviews, team bonding, and keeping your codebase honest.
 
-## 🎯 Features
-
-- **Multiple Roast Modes**: Gentle, Savage, and Toxic (for the brave)
-- **Multiple AI Engines**: Static (zero setup), OpenAI (cloud AI), Ollama (local AI)
-- **Git Integration**: Roast commits, staged changes, and diffs
-- **Smart Analysis**: Detects console.log spam, nested ifs, magic numbers, and more
-- **Meme Generation**: Create hilarious memes based on your code issues
-- **Configurable**: Customize behavior with `.roastmerc`
-- **CI/CD Ready**: Perfect for GitHub Actions and automated code reviews
-- **Graceful Fallback**: AI engines fail? Falls back to static roasts automatically
-
-## 🚀 Quick Start
-
-### Installation
+## 🎭 **See it in Action**
 
 ```bash
-# Install globally
-npm install -g roastcode
+$ npx roastcode examples/bad-code.js
+🔥 Roasting: examples/bad-code.js
+Mode: SAVAGE
+Engine: STATIC
 
-# Or use npx (recommended)
-npx roastcode [file]
+🎯 Roast:
+🤖 RoastBot: I've seen better code written by a cat walking on a keyboard.
+
+$ npx roastcode examples/terrible-code.js --mode toxic
+🔥 Roasting: examples/terrible-code.js
+Mode: TOXIC
+Engine: STATIC
+
+🎯 Roast:
+🤖 RoastBot: This code is what happens when you let a monkey write software.
 ```
 
-### Basic Usage
+## 🎯 **What Makes RoastCode Unique**
+
+- **🎭 Multi-Mode Roasting**: Choose your intensity - Gentle, Savage, or Toxic
+- **🤖 Multiple AI Engines**: Static (zero setup), OpenAI (cloud AI), or Ollama (local AI)
+- **🎨 Meme Generation**: Create hilarious memes based on your code issues
+- **🔧 Git Integration**: Roast commits, staged changes, and diffs
+- **🧠 Smart Analysis**: Detects console.log spam, nested ifs, magic numbers, and more
+- **⚙️ Zero Configuration**: Works out of the box with `npx roastcode <file>`
+- **🔄 Graceful Fallback**: AI engines fail? Falls back to static roasts automatically
+- **🚀 CI/CD Ready**: Perfect for GitHub Actions and automated code reviews
+
+## 🚀 **Quick Start - Zero Setup Required!**
+
+### **Installation (Choose One)**
 
 ```bash
-# Roast a specific file (uses static engine by default)
+# Option 1: Use npx (recommended - no installation needed!)
+npx roastcode [file]
+
+# Option 2: Install globally
+npm install -g roastcode
+```
+
+### **Basic Usage - Works Out of the Box!**
+
+```bash
+# 🎯 Roast any file instantly (no setup required!)
 npx roastcode index.js
 
-# Roast with different modes
-npx roastcode index.js --mode gentle
-npx roastcode index.js --mode savage
-npx roastcode index.js --mode toxic
+# 🎭 Choose your roast intensity
+npx roastcode index.js --mode gentle    # Playful hints
+npx roastcode index.js --mode savage    # Brutal honesty (default)
+npx roastcode index.js --mode toxic     # Unfiltered chaos
 
-# Use AI-powered roasting (OpenAI)
-npx roastcode index.js --engine openai
+# 🤖 Use AI-powered roasting (requires setup)
+npx roastcode index.js --engine openai  # Cloud AI
+npx roastcode index.js --engine ollama  # Local AI
 
-# Use local AI (Ollama)
-npx roastcode index.js --engine ollama
+# 🔧 Git integration
+npx roastcode --commit                  # Roast latest commit
+npx roastcode --staged                  # Roast staged changes
 
-# Roast your latest commit
-npx roastcode --commit
-
-# Roast staged changes
-npx roastcode --staged
-
-# Generate a meme based on your code
+# 🎨 Generate hilarious memes
 npx roastcode index.js --meme
 
-# List available engines
+# 📋 See what's available
 npx roastcode engines
 ```
 
