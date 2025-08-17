@@ -2,7 +2,7 @@
   "name": "roastme",
   "version": "1.0.0",
   "description": "Because your code deserves tough love. A CLI tool that humorously roasts code files, commit messages, and diffs with multiple AI engines.",
-  "main": "index.js",
+  "main": "bin/roastme.js",
   "bin": {
     "roastme": "./bin/roastme.js"
   },
@@ -45,10 +45,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/roastme.git"
+    "url": "git+https://github.com/beingmartinbmc/roastme.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/roastme/issues"
+    "url": "https://github.com/beingmartinbmc/roastme/issues"
   },
-  "homepage": "https://github.com/yourusername/roastme#readme"
+  "homepage": "https://github.com/beingmartinbmc/roastme#readme"
 }
