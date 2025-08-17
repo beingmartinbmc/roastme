@@ -378,6 +378,10 @@ roastme/
 │   ├── config.js          # Configuration handling
 │   ├── adapter.js         # AI engine adapter
 │   ├── prompts.js         # AI prompt templates
+│   ├── meme-generator.js  # Meme generation functionality
+│   ├── constants.js       # Constants and configurations
+│   ├── static-prompts.js  # Static prompt templates
+│   ├── utils.js           # Utility functions
 │   └── engines/
 │       ├── static.js      # Static roast engine
 │       ├── openai.js      # OpenAI AI engine
@@ -386,6 +390,7 @@ roastme/
 │   ├── bad-code.js        # Sample bad code for testing
 │   └── terrible-code.js   # Terrible code examples
 ├── .roastmerc             # Default config
+├── .gitignore             # Git ignore patterns
 ├── package.json
 └── README.md
 ```
