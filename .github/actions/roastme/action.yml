@@ -1,0 +1,58 @@
+name: 'RoastMe PR Review'
+description: 'Roast and analyze a PR with RoastMe — comments score, findings, and fixes.'
+author: 'beingmartinbmc'
+branding:
+  icon: 'zap'
+  color: 'orange'
+
+inputs:
+  path:
+    description: 'Path within the repo to analyze'
+    required: false
+    default: '.'
+  mode:
+    description: 'roast | serious | eli5 | resume | score | card'
+    required: false
+    default: 'score'
+  tone:
+    description: 'Tone: savage | polite | senior-engineer | cto | corporate | gentle | toxic'
+    required: false
+    default: 'savage'
+  fail-on:
+    description: 'Fail the action if overall score is below this threshold (0-10).'
+    required: false
+    default: '0'
+
+outputs:
+  score:
+    description: 'Overall RoastMe health score (0-10)'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install RoastMe
+      shell: bash
+      run: npm i -g roastcode
+
+    - name: Run RoastMe
+      shell: bash
+      env:
+        ROASTME_PATH: ${{ inputs.path }}
+        ROASTME_MODE: ${{ inputs.mode }}
+        ROASTME_TONE: ${{ inputs.tone }}
+        ROASTME_FAIL_ON: ${{ inputs.fail-on }}
+      run: |
+        set -e
+        case "$ROASTME_MODE" in
+          score)   roastme score   "$ROASTME_PATH" --tone "$ROASTME_TONE" --json | tee roastme.json ;;
+          card)    roastme card    "$ROASTME_PATH" --tone "$ROASTME_TONE" --json | tee roastme.json ;;
+          eli5)    roastme eli5    "$ROASTME_PATH" --tone "$ROASTME_TONE" | tee roastme.txt ;;
+          resume)  roastme resume  "$ROASTME_PATH" | tee roastme.txt ;;
+          serious) roastme serious "$ROASTME_PATH" | tee roastme.txt ;;
+          *)       roastme analyze "$ROASTME_PATH" --tone "$ROASTME_TONE" | tee roastme.txt ;;
+        esac

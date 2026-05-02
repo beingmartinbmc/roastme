@@ -9,6 +9,51 @@
 
 A CLI tool that humorously roasts your code files, commit messages, and diffs with AI-powered savagery. Perfect for code reviews, team bonding, and keeping your codebase honest.
 
+## ✨ v2 — Now It's Actually Useful
+
+RoastMe is no longer just a roast generator. It is a full repo analysis toolkit with:
+
+- **`score`** — repo health scorecard (Code Quality, Architecture, Readability, Security, Dependencies, Scalability Risk).
+- **`analyze`** — full architecture + security + pattern + dependency report.
+- **`fix`** — before / after refactor suggestions for a file.
+- **`serious`** — pure professional code review (no jokes).
+- **`eli5`** — explain the repo simply, then roast it.
+- **`resume`** — convert a repo into resume-ready bullet points.
+- **`card`** — shareable text / SVG / JSON health card.
+- **`compare`** — score two repos side-by-side.
+- **`tones`** — switch between *savage*, *polite*, *senior-engineer*, *cto*, *corporate*, *gentle*, *toxic*.
+- **GitHub Action** at `.github/actions/roastme` for PR review.
+- **Pre-commit hook** at `scripts/pre-commit.sh` to block bad code before it lands.
+
+```bash
+# Score the current repo
+npx roastme score .
+
+# Full architecture + security analysis
+npx roastme analyze .
+
+# Generate a shareable SVG card
+npx roastme card . --format svg --out card.svg
+
+# Get fix suggestions
+npx roastme fix bad-code.js
+
+# Compare two repos
+npx roastme compare ./repo-a ./repo-b
+
+# Different tones
+npx roastme roast bad-code.js --tone senior-engineer
+npx roastme roast bad-code.js --tone cto
+```
+
+Detected automatically:
+- 🔐 secrets (AWS, GitHub, Slack tokens, private keys, hardcoded passwords)
+- 💣 unsafe patterns (`eval`, `exec`, `innerHTML`, weak crypto, disabled TLS, SQL concat)
+- 🏛️ god classes / files, tight coupling, high cyclomatic complexity, **circular dependencies**
+- 🪪 reinvented queues / loggers / singletons, callback hell, MVC boilerplate, util junk drawers, missing tests, mixed module systems
+- 🧾 redundant or heavy dependencies (lodash + underscore, moment, etc.)
+- 🗒️ TODO / FIXME / HACK / XXX / DEPRECATED tech-debt markers
+
 ## 🎭 **See it in Action**
 
 ```bash
